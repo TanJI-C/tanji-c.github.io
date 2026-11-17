@@ -1,0 +1,9 @@
+- title: DBA-Bench
+  en: A benchmark for evaluating database operations agents on live PostgreSQL and TiDB workloads, from diagnosis to remediation.
+  zh-CN: 数据库运维智能体评测基准。在运行实际工作负载的 PostgreSQL 和 TiDB 环境中评估从诊断到修复的完整过程。
+  paper: https://arxiv.org/abs/2607.22165
+  repository: https://github.com/TanJI-C/DBA-Bench
+- title: DBAgent
+  en: A reinforcement learning agent for multi-step diagnosis and remediation in database operations.
+  zh-CN: 面向数据库自治运维的强化学习智能体，聚焦多步故障诊断与修复。
+  paper: https://www.vldb.org/pvldb/vol19/p3928-chen.pdf

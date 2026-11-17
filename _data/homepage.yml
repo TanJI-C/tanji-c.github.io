@@ -1,0 +1,26 @@
+en:
+  nav_label: Language and appearance
+  theme_label: Change color theme
+  theme_light: Light
+  theme_dark: Dark
+  publications: Publications
+  publication_legend: '* Equal contribution (co-first authors).'
+  education: Education
+  honors: Honors & awards
+  internships: Internships
+  name_note: Previously known as Junming Chen (陈俊明).
+  theme_credit: Built with al-folio
+  bio: I’m a Ph.D. student at the University of Electronic Science and Technology of China, advised by [Prof. Kai Zheng](https://zheng-kai.com/). My research spans Agentic RL, AI4DB, and Physical AI. My database work focuses on query optimization and autonomous operations.
+zh-CN:
+  nav_label: 语言与配色
+  theme_label: 切换配色模式
+  theme_light: 浅色
+  theme_dark: 深色
+  publications: 论文
+  publication_legend: '* 表示共同第一作者。'
+  education: 教育经历
+  honors: 荣誉与奖项
+  internships: 实习经历
+  name_note: 曾用名陈俊明（Junming Chen）。
+  theme_credit: 基于 al-folio 搭建
+  bio: 我目前在电子科技大学攻读博士学位，师从[郑凯教授](https://zheng-kai.com/)。我关注 Agentic RL、AI4DB 和 Physical AI，在数据库方向主要研究查询优化和自治运维。

@@ -1,0 +1,14 @@
+<!doctype html>
+{% assign destination = page.redirect_to | relative_url %}
+{% assign copy = site.data.homepage[page.lang] %}
+<html lang="{{ page.lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content="0; url={{ destination }}">
+    <title>{{ copy.publications }}</title>
+  </head>
+  <body>
+    <a href="{{ destination }}">{{ copy.publications }}</a>
+  </body>
+</html>

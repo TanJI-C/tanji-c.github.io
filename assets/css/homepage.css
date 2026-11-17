@@ -1,0 +1,409 @@
+html:root {
+  color-scheme: light;
+  --site-surface: #fbf9f5;
+  --site-card: #fffdf9;
+  --site-text: #25201c;
+  --site-muted: #665c51;
+  --site-rule: #e2d8cb;
+  --site-accent: #874617;
+  --site-soft: #f4e9da;
+  --global-bg-color: var(--site-surface);
+  --global-text-color: var(--site-text);
+  --global-text-color-light: var(--site-muted);
+  --global-theme-color: var(--site-accent);
+  --global-divider-color: var(--site-rule);
+  --site-heading: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Palatino, "Noto Serif CJK SC", "Songti SC", serif;
+  --site-body: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --site-surface: #1d1b19;
+  --site-card: #24211e;
+  --site-text: #f4eee6;
+  --site-muted: #c2b5a8;
+  --site-rule: #494037;
+  --site-accent: #ffc48c;
+  --site-soft: #352820;
+}
+
+.research-site {
+  background: var(--site-surface);
+  color: var(--site-text);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--site-body);
+  line-height: 1.55;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.research-site h1,
+.research-site h2,
+.research-site p,
+.research-site dd {
+  color: inherit;
+}
+
+.research-site a {
+  color: var(--site-accent);
+  text-underline-offset: 0.2em;
+}
+
+.research-site a:focus-visible,
+.research-theme:focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 4px;
+}
+
+.research-shell {
+  margin-inline: auto;
+  width: min(880px, calc(100% - 3rem));
+}
+
+.research-header {
+  border-bottom: 1px solid var(--site-rule);
+}
+
+.research-header-inner,
+.research-nav {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.research-header-inner {
+  gap: 0.4rem 2rem;
+  justify-content: space-between;
+  min-height: 60px;
+  padding-block: 0.55rem;
+}
+
+.research-nav {
+  gap: 0.2rem 1.45rem;
+  font-size: 0.88rem;
+}
+
+.research-header a {
+  padding-block: 0.35rem;
+  text-decoration: none;
+}
+
+.research-header .research-brand {
+  color: var(--site-text);
+  font-weight: 650;
+}
+
+.research-nav a {
+  color: var(--site-accent);
+}
+
+.research-nav a:hover {
+  text-decoration: underline;
+}
+
+.research-theme {
+  background: var(--site-soft);
+  border: 1px solid var(--site-rule);
+  border-radius: 999px;
+  color: var(--site-accent);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  min-height: 2.25rem;
+  padding: 0.2rem 0.7rem;
+  white-space: nowrap;
+}
+
+.research-theme[hidden],
+html[data-theme="dark"] .research-theme-light,
+html:not([data-theme="dark"]) .research-theme-dark {
+  display: none;
+}
+
+.research-theme:hover {
+  border-color: var(--site-accent);
+}
+
+.research-main {
+  flex: 1;
+  padding-block: clamp(2.25rem, 6vw, 4rem) 3rem;
+}
+
+.research-intro {
+  align-items: center;
+  display: grid;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  grid-template-columns: minmax(0, 1fr) clamp(9.5rem, 24vw, 13rem);
+  margin-bottom: 2.55rem;
+}
+
+.research-portrait {
+  aspect-ratio: 1;
+  border: 1px solid var(--site-rule);
+  border-radius: 0.9rem;
+  height: auto;
+  object-fit: cover;
+  object-position: 62% center;
+  width: 100%;
+}
+
+.research-name {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.85rem;
+}
+
+.research-site h1,
+.research-site h2 {
+  font-family: var(--site-heading);
+  font-weight: 400;
+  line-height: 1.14;
+  margin: 0;
+}
+
+.research-site h1 {
+  font-size: clamp(2.65rem, 6vw, 4.35rem);
+  letter-spacing: -0.025em;
+}
+
+.research-site h1:lang(zh-CN),
+.research-site h2:lang(zh-CN) {
+  letter-spacing: 0.01em;
+}
+
+.research-site h2 {
+  font-size: clamp(1.55rem, 4vw, 2.15rem);
+}
+
+.research-site .research-second-name {
+  color: var(--site-accent);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.research-site .research-name-note {
+  color: var(--site-muted);
+  font-size: 0.95rem;
+  margin: 0.45rem 0 0;
+}
+
+.research-intro .research-bio {
+  font-size: 1.08rem;
+  margin: 1rem 0 1.2rem;
+  max-width: 58ch;
+}
+
+.research-bio p {
+  margin: 0;
+}
+
+.research-bio a {
+  text-decoration: underline;
+}
+
+.research-timeline {
+  list-style: none;
+  margin: 0.85rem 0 0;
+  padding: 0;
+}
+
+.research-date {
+  color: var(--site-accent);
+  font-size: 0.86rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.research-timeline li {
+  align-items: baseline;
+  display: grid;
+  gap: 0.3rem 0.85rem;
+  grid-template-columns: 6.6rem minmax(0, 1fr);
+  padding-block: 0.45rem;
+}
+
+.research-timeline li + li {
+  border-top: 1px solid var(--site-rule);
+}
+
+.research-timeline-dated li {
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+}
+
+.research-timeline-detail {
+  color: var(--site-muted);
+  display: block;
+}
+
+.research-honor-highlight {
+  font-weight: 700;
+}
+
+.research-medal {
+  margin-inline-end: 0.25rem;
+}
+
+.research-profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.research-profile-links a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.research-section {
+  border-top: 1px solid var(--site-rule);
+  padding-block: 1.4rem 1.75rem;
+}
+
+.research-site .research-publication-legend {
+  color: var(--site-muted);
+  font-size: 0.92rem;
+  margin: 0.4rem 0 0;
+}
+
+.research-site .research-publications {
+  margin-top: 0.95rem;
+}
+
+.research-publications ol.bibliography > li > .row {
+  align-items: start;
+  background: var(--site-card);
+  border: 1px solid var(--site-rule);
+  border-radius: 0.6rem;
+  display: grid;
+  gap: 1rem 1.35rem;
+  grid-template-columns: minmax(0, 27%) minmax(0, 1fr);
+  margin: 0;
+  padding: 0.95rem;
+}
+
+.research-publications ol.bibliography > li > .row > .abbr,
+.research-publications ol.bibliography > li > .row > [id] {
+  margin: 0;
+  max-width: none;
+  min-width: 0;
+  padding: 0;
+  width: auto;
+}
+
+.research-publications .abbr figure {
+  margin: 0;
+}
+
+.research-publications .abbr img.preview {
+  background: #fff;
+  border: 1px solid var(--site-rule);
+  border-radius: 0.35rem;
+  box-shadow: none;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.publication-figure-link {
+  border-radius: 0.35rem;
+  cursor: zoom-in;
+  display: block;
+}
+
+.publication-figure-link:hover img {
+  border-color: var(--site-accent);
+}
+
+.research-site .research-publications .abbr .badge {
+  background: var(--site-soft);
+  border: 1px solid var(--site-rule);
+  /* al-folio applies an important text color to publication badges. */
+  color: var(--site-accent) !important;
+  display: inline-block;
+  font-family: var(--site-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  max-width: max-content;
+  padding: 0.3rem 0.6rem;
+  text-decoration: none;
+}
+
+.research-publications h2.bibliography {
+  color: var(--site-muted);
+  border-top: 0;
+  font-size: 1.35rem;
+  margin: 1.35rem 0 0.5rem;
+  padding-top: 0;
+  text-align: start;
+}
+
+.research-publications .bibliography {
+  color: var(--site-text);
+}
+
+.research-publications .title {
+  color: var(--site-accent);
+  line-height: 1.35;
+  margin-bottom: 0.26rem;
+}
+
+.research-publications .author,
+.research-publications .periodical {
+  color: var(--site-muted);
+}
+
+.research-site .research-publications .links a.btn {
+  border: 0;
+  color: var(--site-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-inline-end: 0.7rem;
+  padding: 0.18rem 0;
+  text-decoration: underline;
+}
+
+.research-footer {
+  align-items: center;
+  border-top: 1px solid var(--site-rule);
+  color: var(--site-muted);
+  display: flex;
+  font-size: 0.82rem;
+  gap: 0.7rem;
+  justify-content: space-between;
+  padding-block: 1.15rem;
+}
+
+@media (max-width: 600px) {
+  .research-shell {
+    width: calc(100% - 2rem);
+  }
+
+  .research-nav {
+    gap: 0.15rem 0.9rem;
+  }
+
+  .research-intro {
+    gap: 1.3rem;
+    grid-template-columns: 1fr;
+  }
+
+  .research-portrait {
+    grid-row: 1;
+    width: clamp(7.5rem, 32vw, 10rem);
+  }
+
+  .research-timeline-dated li {
+    grid-template-columns: 1fr;
+  }
+
+  .research-publications ol.bibliography > li > .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

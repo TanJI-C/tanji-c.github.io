@@ -1,0 +1,87 @@
+name:
+  en: Huaiming Shen
+  zh-CN: 沈怀明
+links:
+  - name: carbenchen@gmail.com
+    url: mailto:carbenchen@gmail.com
+  - name: Google Scholar
+    url: https://scholar.google.com/citations?hl=en&user=Pxo5FIAAAAAJ
+  - name: GitHub
+    url: https://github.com/TanJI-C/
+cv_pdf:
+education:
+  - school:
+      en: University of Electronic Science and Technology of China
+      zh-CN: 电子科技大学
+    dates:
+      en: Sep 2024 – Present
+      zh-CN: 2024.09 至今
+    details:
+      en: Ph.D. student in Computer Science and Technology
+      zh-CN: 计算机科学与技术博士在读（硕博连读）
+  - school:
+      en: Shenzhen University
+      zh-CN: 深圳大学
+    dates:
+      en: Sep 2020 – Jun 2024
+      zh-CN: 2020.09 至 2024.06
+    details:
+      en: Undergraduate studies · GPA 4.19/4.5 · Ranked 1st overall
+      zh-CN: 本科 · GPA 4.19/4.5 · 综合排名第 1
+honors:
+  - year: 2024–2026
+    name:
+      en: Academic Scholarship
+      zh-CN: 学业奖学金
+  - year: 2023
+    name:
+      en: Tencent Founders’ Innovation Scholarship
+      zh-CN: 腾讯创始人创新奖学金
+    highlighted: true
+  - year: 2023
+    name:
+      en: Gold Medal, CCF CCSP
+      zh-CN: CCF CCSP 金牌
+    highlighted: true
+    medal: 🥇
+  - year: 2023
+    name:
+      en: First Prize, Lanqiao Cup National Finals
+      zh-CN: 蓝桥杯全国总决赛一等奖
+    highlighted: true
+    medal: 🥇
+  - year: 2022
+    name:
+      en: Silver Medal, ACM-ICPC
+      zh-CN: ACM-ICPC 银牌
+    highlighted: true
+    medal: 🥈
+  - year: 2022
+    name:
+      en: Silver Medal, CCPC
+      zh-CN: CCPC 银牌
+    highlighted: true
+    medal: 🥈
+  - year: 2021–2023
+    name:
+      en: Innovation and Entrepreneurship Star and Academic Star
+      zh-CN: 双创之星、学习之星
+internships:
+  - dates:
+      en: Feb 2025 – Aug 2025
+      zh-CN: 2025.02 至 2025.08
+    organization:
+      en: Huawei Cloud EI Team
+      zh-CN: 华为云 EI 团队
+    role:
+      en: Database Agent R&D Intern
+      zh-CN: 数据库 Agent 研发实习生
+  - dates:
+      en: Mar 2024 – Oct 2024
+      zh-CN: 2024.03 至 2024.10
+    organization:
+      en: Huawei Cloud Database Innovation Lab
+      zh-CN: 华为云数据库创新 Lab
+    role:
+      en: Query Optimization R&D Intern
+      zh-CN: 查询优化研发实习生

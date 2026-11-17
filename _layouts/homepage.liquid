@@ -1,0 +1,52 @@
+<!doctype html>
+{% assign locale = page.lang | default: site.lang %}
+{% assign copy = site.data.homepage[locale] %}
+{% assign profile = site.data.profile %}
+{% assign current_name = profile.name[locale] %}
+{% assign alternate_locale = 'zh-CN' %}
+{% assign alternate_label = '简体中文' %}
+{% if locale == 'zh-CN' %}
+  {% assign alternate_locale = 'en' %}
+  {% assign alternate_label = 'English' %}
+{% endif %}
+{% assign homepages = site.pages | where: 'section', 'about' %}
+{% assign alternate_page = homepages | where: 'lang', alternate_locale | first %}
+{% assign local_home = homepages | where: 'lang', locale | first %}
+<html lang="{{ locale }}">
+  <head>
+    {% include head.liquid %}
+    <script src="{{ '/assets/js/color-theme.js' | relative_url | bust_file_cache }}"></script>
+    <link rel="stylesheet" href="{{ '/assets/css/homepage.css' | relative_url | bust_file_cache }}">
+    {% if alternate_page %}
+      <link rel="alternate" hreflang="{{ alternate_locale }}" href="{{ alternate_page.url | absolute_url }}">
+    {% endif %}
+  </head>
+  <body class="research-site">
+    <header class="research-header">
+      <div class="research-shell research-header-inner">
+        <a class="research-brand" href="{{ local_home.url | relative_url }}">{{ current_name }}</a>
+        <nav aria-label="{{ copy.nav_label }}" class="research-nav">
+          {% if alternate_page %}
+            <a href="{{ alternate_page.url | relative_url }}" hreflang="{{ alternate_locale }}" lang="{{ alternate_locale }}">{{ alternate_label }}</a>
+          {% endif %}
+          <button id="color-theme-toggle" class="research-theme" type="button" title="{{ copy.theme_label }}" hidden>
+            <span class="sr-only">{{ copy.theme_label }} </span>
+            <span class="research-theme-light"><span aria-hidden="true">☀️</span> {{ copy.theme_light }}</span>
+            <span class="research-theme-dark"><span aria-hidden="true">🌙</span> {{ copy.theme_dark }}</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main class="research-shell research-main">
+      {{ content }}
+    </main>
+    <footer class="research-footer research-shell">
+      <span>{{ current_name }}</span>
+      <a href="https://github.com/alshedivat/al-folio">{{ copy.theme_credit }}</a>
+    </footer>
+    {% include scripts.liquid %}
+    {% if page.section == 'about' %}
+      <script defer src="{{ '/assets/js/publication-figures.js' | relative_url | bust_file_cache }}"></script>
+    {% endif %}
+  </body>
+</html>

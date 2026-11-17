@@ -1,0 +1,79 @@
+{% assign locale = page.lang %}
+{% assign copy = site.data.homepage[locale] %}
+{% assign profile = site.data.profile %}
+<header class="research-intro">
+  <div class="research-identity">
+    <div class="research-name">
+      <h1>{{ profile.name[locale] }}</h1>
+      {% if locale == 'zh-CN' %}
+        <span class="research-second-name" lang="en">{{ profile.name.en }}</span>
+      {% else %}
+        <span class="research-second-name" lang="zh-CN">{{ profile.name['zh-CN'] }}</span>
+      {% endif %}
+    </div>
+    <p class="research-name-note">{{ copy.name_note }}</p>
+    <div class="research-bio">{{ copy.bio | markdownify }}</div>
+    <ul class="research-profile-links" role="list">
+      {% for link in profile.links %}
+        <li><a href="{{ link.url | escape }}">{{ link.name }}</a></li>
+      {% endfor %}
+      {% if profile.cv_pdf %}
+        <li><a href="{{ profile.cv_pdf | relative_url }}">CV (PDF)</a></li>
+      {% endif %}
+    </ul>
+  </div>
+  <img class="research-portrait" src="{{ '/assets/img/profile-portrait.jpg' | relative_url | bust_file_cache }}" alt="" width="384" height="337">
+</header>
+
+<section class="research-section" aria-labelledby="publications">
+  <h2 id="publications">{{ copy.publications }}</h2>
+  <p class="research-publication-legend">{{ copy.publication_legend }}</p>
+  <div class="publications research-publications" lang="en">
+    {% bibliography --group_by none %}
+  </div>
+</section>
+
+<section class="research-section" aria-labelledby="education">
+  <h2 id="education">{{ copy.education }}</h2>
+  <ol class="research-timeline research-timeline-dated" role="list">
+    {% for entry in profile.education %}
+      <li>
+        <span class="research-date">{{ entry.dates[locale] }}</span>
+        <div>
+          <strong>{{ entry.school[locale] }}</strong>
+          <span class="research-timeline-detail">{{ entry.details[locale] }}</span>
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="research-section" aria-labelledby="honors">
+  <h2 id="honors">{{ copy.honors }}</h2>
+  <ul class="research-timeline" role="list">
+    {% for honor in profile.honors %}
+      <li>
+        <span class="research-date">{{ honor.year }}</span>
+        <span{% if honor.highlighted %} class="research-honor-highlight"{% endif %}>
+          {% if honor.medal %}<span class="research-medal" aria-hidden="true">{{ honor.medal }}</span>{% endif %}
+          {{ honor.name[locale] }}
+        </span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="research-section" aria-labelledby="internships">
+  <h2 id="internships">{{ copy.internships }}</h2>
+  <ul class="research-timeline research-timeline-dated" role="list">
+    {% for internship in profile.internships %}
+      <li>
+        <span class="research-date">{{ internship.dates[locale] }}</span>
+        <div>
+          <strong>{{ internship.role[locale] }}</strong>
+          <span class="research-timeline-detail">{{ internship.organization[locale] }}</span>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
